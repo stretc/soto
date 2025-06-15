@@ -1,4 +1,4 @@
-import SignOutAction from "@/components/actions/SignOutAction";
+import DashboardNav from "@/components/dashboard-nav";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 
@@ -12,9 +12,8 @@ export default async function SignOut() {
   }
 
   return (
-    <div className="min-h-screen w-full flex p-[25px] justify-between items-center">
-      <h1>Create</h1>
-      <SignOutAction />
+    <div className="p-0 min-h-screen w-full flex justify-between">
+      <DashboardNav />
     </div>
   );
 }

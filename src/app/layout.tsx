@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
 import { IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
-import { TornadoIcon } from "@phosphor-icons/react/dist/ssr";
-import { Button } from "@/components/ui/button";
-import { MoonIcon } from "@phosphor-icons/react/dist/ssr";
+import { ThemeProvider } from "@/components/theme.provider";
 
 export const metadata: Metadata = {
   title: "Soto",
@@ -27,27 +25,11 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={rubik.className}>
+    <html lang="en" className={rubik.className} suppressHydrationWarning>
       <body>
-        <nav className="absolute top-0 left-0 w-full p-6 z-10">
-          <div className="flex items-center justify-between w-full">
-            <a href="../" className="flex items-center gap-2 font-medium">
-              <div className="hover:bg-sidebar-accent flex size-6 rounded-xs items-center justify-center">
-                <TornadoIcon />
-              </div>
-              Soto
-            </a>
-            <div>
-              <Button
-                className="flex items-center gap-2 font-medium size-7 rounded-xs hover:bg-sidebar-accent bg-[current]"
-                type="button"
-              >
-                <MoonIcon weight="bold" />
-              </Button>
-            </div>
-          </div>
-        </nav>
-        <main>{children}</main>
+        <ThemeProvider attribute="class" defaultTheme="dark">
+          <main>{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   );
