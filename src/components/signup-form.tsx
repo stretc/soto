@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -10,11 +9,16 @@ import {
 
 import GithubSignIn from "./actions/GithubSignIn";
 import SignUpPassInput from "./actions/SignUpInput";
+import { headers } from "next/headers";
+import { auth } from "@/lib/auth";
 
-export function SignUpForm({
+export async function SignUpForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>

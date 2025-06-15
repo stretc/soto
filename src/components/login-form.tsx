@@ -1,12 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-
-import { signIn } from "@server/users";
-import LoginButton from "./actions/LoginButton";
-import { githubSignIn } from "@/lib/auth-client";
-import GithubSignIn from "./actions/GithubSignIn";
+import LoginInput from "./actions/LoginInput";
 
 export function LoginForm({
   className,
@@ -20,36 +13,7 @@ export function LoginForm({
           Enter your email below to login to your account
         </p>
       </div>
-      <div className="grid gap-6">
-        <div className="grid gap-3">
-          <Label htmlFor="email">Email</Label>
-          <Input
-            id="email"
-            type="email"
-            placeholder="name@example.com"
-            required
-          />
-        </div>
-        <div className="grid gap-3">
-          <div className="flex items-center">
-            <Label htmlFor="password">Password</Label>
-            <a
-              href="#"
-              className="ml-auto text-sm underline-offset-4 hover:underline"
-            >
-              Forgot your password?
-            </a>
-          </div>
-          <Input id="password" type="password" required />
-        </div>
-        <LoginButton />
-        <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
-          <span className="bg-background text-muted-foreground relative z-10 px-2">
-            Or continue with
-          </span>
-        </div>
-        <GithubSignIn />
-      </div>
+      <LoginInput />
       <div className="text-center text-sm">
         Don&apos;t have an account?{" "}
         <a href="/signup" className="underline underline-offset-4">
