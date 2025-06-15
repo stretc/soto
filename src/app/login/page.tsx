@@ -1,14 +1,14 @@
 import React from "react";
 import { LoginForm } from "@/components/login-form";
-import { Button } from "@/components/ui/button";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
-import { MoonIcon, TornadoIcon } from "@phosphor-icons/react/dist/ssr";
 
 export default async function LoginPage() {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
+
+  console.log(session);
 
   return (
     <main>
