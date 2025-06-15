@@ -50,19 +50,18 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
       );
     }
     return (
-      <NextLink href={href} passHref legacyBehavior>
-        <a
-          ref={ref}
-          data-slot="link"
-          data-variant={variant}
-          className={cn(linkVariants({ variant, size, className }))}
-          {...props}
-        />
-      </NextLink>
+      <NextLink
+        href={href}
+        passHref
+        data-slot="link"
+        data-variant={variant}
+        className={cn(linkVariants({ variant, size, className }))}
+        {...props}
+      ></NextLink>
     );
   }
 );
 
-Link.displayName = "Link";
+Link.displayName = "LinkEl";
 
 export { Link, linkVariants };

@@ -11,13 +11,12 @@ import { Settings } from "lucide-react";
 import { Link } from "./ui/Link";
 import { Button } from "./ui/button";
 import { authClient } from "@/lib/auth-client";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const DashboardNav = () => {
   const [activeLink, setActiveLink] = useState("/dashboard/create");
 
   const router = useRouter();
-  const pathname = usePathname();
 
   const signOut = async () => {
     await authClient.signOut({
@@ -49,7 +48,6 @@ const DashboardNav = () => {
                 activeLink === "/dashboard/create" ? "disabled" : "default"
               }
               onClick={(e) => {
-                e.preventDefault();
                 setActiveLink("/dashboard/create");
               }}
             >
@@ -64,7 +62,6 @@ const DashboardNav = () => {
                 activeLink === "/dashboard/settings" ? "disabled" : "default"
               }
               onClick={(e) => {
-                e.preventDefault();
                 setActiveLink("/dashboard/settings");
               }}
             >
@@ -81,7 +78,6 @@ const DashboardNav = () => {
                 activeLink === "/dashboard/documents" ? "disabled" : "default"
               }
               onClick={(e) => {
-                e.preventDefault();
                 setActiveLink("/dashboard/documents");
               }}
             >
