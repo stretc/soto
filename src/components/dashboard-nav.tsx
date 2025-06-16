@@ -1,6 +1,5 @@
 "use client";
-import { useState } from "react";
-
+import { usePathname, useRouter } from "next/navigation";
 import {
   FilePlusIcon,
   FoldersIcon,
@@ -11,11 +10,9 @@ import { Settings } from "lucide-react";
 import { Link } from "./ui/Link";
 import { Button } from "./ui/button";
 import { authClient } from "@/lib/auth-client";
-import { useRouter } from "next/navigation";
 
 const DashboardNav = () => {
-  const [activeLink, setActiveLink] = useState("/dashboard/create");
-
+  const pathname = usePathname();
   const router = useRouter();
 
   const signOut = async () => {
@@ -45,11 +42,8 @@ const DashboardNav = () => {
             <Link
               href="/dashboard/create"
               variant={
-                activeLink === "/dashboard/create" ? "disabled" : "default"
+                pathname === "/dashboard/create" ? "disabled" : "default"
               }
-              onClick={(e) => {
-                setActiveLink("/dashboard/create");
-              }}
             >
               <div className="mr-3">
                 <FilePlusIcon size={14} />
@@ -59,11 +53,8 @@ const DashboardNav = () => {
             <Link
               href="/dashboard/settings"
               variant={
-                activeLink === "/dashboard/settings" ? "disabled" : "default"
+                pathname === "/dashboard/settings" ? "disabled" : "default"
               }
-              onClick={(e) => {
-                setActiveLink("/dashboard/settings");
-              }}
             >
               <div className="flex items-center">
                 <div className="mr-3">
@@ -75,11 +66,8 @@ const DashboardNav = () => {
             <Link
               href="/dashboard/documents"
               variant={
-                activeLink === "/dashboard/documents" ? "disabled" : "default"
+                pathname === "/dashboard/documents" ? "disabled" : "default"
               }
-              onClick={(e) => {
-                setActiveLink("/dashboard/documents");
-              }}
             >
               <div className="flex items-center">
                 <div className="mr-3">
@@ -92,7 +80,7 @@ const DashboardNav = () => {
           <div className="flex-1"></div>
           <Separator orientation="horizontal" />
           <div className="flex justify-center">
-            <Button className="w-2/5" onClick={signOut}>
+            <Button className="w-2/5" variant={"destructive"} onClick={signOut}>
               Log out
             </Button>
           </div>

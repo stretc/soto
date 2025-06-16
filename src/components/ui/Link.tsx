@@ -5,7 +5,7 @@ import NextLink from "next/link";
 import { Slot } from "@radix-ui/react-slot";
 
 const linkVariants = cva(
-  "inline-flex scale-100 items-center rounded-xs text-sm font-medium ring-offset-background transition-[transform,background-color] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary focus-visible:ring-offset-2 active:scale-95 disabled:pointer-events-none disabled:opacity-50 hover:bg-secondary hover:text-secondary-foreground h-auto justify-start px-4 py-3",
+  "inline-flex scale-100 items-center rounded-xs text-sm font-medium ring-offset-background transition-[transform,background-color] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary focus-visible:ring-offset-2 active:scale-95 disabled:pointer-events-none disabled:opacity-50 hover:bg-secondary hover:text-secondary-foreground h-auto justify-start px-4 py-3 font-[400]",
   {
     variants: {
       variant: {
