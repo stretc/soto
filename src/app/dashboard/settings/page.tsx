@@ -1,10 +1,12 @@
 import React from "react";
+import DashboardNav from "@/components/dashboard-nav";
 
 const page = () => {
   return (
-    <div>
+    <>
+      <DashboardNav />
       <h1>Settings</h1>
-    </div>
+    </>
   );
 };
 
