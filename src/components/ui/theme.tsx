@@ -3,8 +3,8 @@
 import * as React from "react";
 
 import { useTheme } from "next-themes";
-import { SunMoon } from "lucide-react";
 import { Button } from "./button";
+import { CircleHalfTiltIcon } from "@phosphor-icons/react/dist/ssr";
 
 const ModeToggle = () => {
   const { theme, setTheme } = useTheme();
@@ -21,8 +21,14 @@ const ModeToggle = () => {
   };
 
   return (
-    <Button onClick={handleMode}>
-      <SunMoon />
+    <Button
+      onClick={handleMode}
+      className="bg-background hover:bg-secondary shadow-none h-[25px] w-[25px]"
+    >
+      <CircleHalfTiltIcon
+        className="text-foreground"
+        style={{ height: "1.2em", width: "1.2em" }}
+      />
     </Button>
   );
 };

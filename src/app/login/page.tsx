@@ -5,9 +5,9 @@ export default async function LoginPage() {
   return (
     <main>
       <div className="grid min-h-svh lg:grid-cols-[3fr_8fr]">
-        <div className="flex flex-col gap-4 md:p-10">
+        <div className="flex flex-col gap-4 md:p-8">
           <div className="flex flex-1 items-center justify-center">
-            <div className="w-full max-w-xs">
+            <div className="w-full max-w-sm">
               <LoginForm />
             </div>
           </div>
