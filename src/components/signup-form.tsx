@@ -9,21 +9,16 @@ import {
 
 import GithubSignIn from "./actions/GithubSignIn";
 import SignUpPassInput from "./actions/SignUpInput";
-import { headers } from "next/headers";
-import { auth } from "@/lib/auth";
 
 export async function SignUpForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
-  const session = await auth.api.getSession({
-    headers: await headers(),
-  });
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
         <CardHeader className="text-center">
-          <CardTitle className="text-xl">Welcome back</CardTitle>
+          <CardTitle className="text-xl">Welcome</CardTitle>
           <CardDescription>Link your Github account</CardDescription>
         </CardHeader>
         <CardContent>

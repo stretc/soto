@@ -1,19 +1,9 @@
-import { auth } from "@/lib/auth";
-import { headers } from "next/headers";
 import { Button } from "@/components/ui/button";
 import { GithubLogoIcon, PlusIcon } from "@phosphor-icons/react/dist/ssr";
 import { Separator } from "@/components/ui/separator";
 import DashboardNav from "@/components/dashboard-nav";
 
 export default async function SignOut() {
-  const session = await auth.api.getSession({
-    headers: await headers(),
-  });
-
-  if (session) {
-    console.log(session);
-  }
-
   return (
     <>
       <DashboardNav />

@@ -6,8 +6,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-import { signIn } from "@server/users";
-
 import GithubSignIn from "./GithubSignIn";
 
 export default function LoginInput() {
@@ -28,9 +26,6 @@ export default function LoginInput() {
 
     setIsLoading(true);
     try {
-      // server action is called directly
-      const response = await signIn(userEmail, userPassword);
-
       console.log("Signed in successfully.");
       router.push("/dashboard/create");
     } catch (err) {

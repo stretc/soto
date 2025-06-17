@@ -9,20 +9,13 @@ import { Separator } from "./ui/separator";
 import { Settings } from "lucide-react";
 import { Link } from "./ui/Link";
 import { Button } from "./ui/button";
-import { authClient } from "@/lib/auth-client";
 
 const DashboardNav = () => {
   const pathname = usePathname();
   const router = useRouter();
 
   const signOut = async () => {
-    await authClient.signOut({
-      fetchOptions: {
-        onSuccess: () => {
-          router.push("/login");
-        },
-      },
-    });
+    router.push("/");
   };
 
   return (
@@ -80,7 +73,11 @@ const DashboardNav = () => {
           <div className="flex-1"></div>
           <Separator orientation="horizontal" />
           <div className="flex justify-center">
-            <Button className="w-2/5" variant={"destructive"} onClick={signOut}>
+            <Button
+              className="w-[85px]"
+              variant={"destructive"}
+              onClick={signOut}
+            >
               Log out
             </Button>
           </div>
