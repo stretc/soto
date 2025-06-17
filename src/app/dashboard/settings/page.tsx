@@ -5,7 +5,9 @@ const page = () => {
   return (
     <>
       <DashboardNav />
-      <h1>Settings</h1>
+      <div className="max-w-2xl space-y-4 mx-6 my-4 lg:mx-8 lg:pl[320px]">
+        <h1 className="text-4xl font-semibold tracking-tight">Settings</h1>
+      </div>
     </>
   );
 };

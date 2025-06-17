@@ -31,7 +31,7 @@ export default function CreatePage() {
         description: data.description,
         updated_at: new Date().toLocaleDateString(),
         created_at: new Date().toLocaleDateString(),
-        status: "New",
+        status: "Draft",
       },
     ]);
     return true;
@@ -54,7 +54,7 @@ export default function CreatePage() {
           <Separator className="my-[19px]" />
           <div className="p-5 items-container min-h-[800px] rounded-xs gap-5">
             <DialogForm onCreate={handleCreate} />
-            <div className="mt-6">
+            <div className="">
               <TableForm files={files} />
             </div>
           </div>

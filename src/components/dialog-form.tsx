@@ -15,7 +15,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { PlusIcon } from "@phosphor-icons/react/dist/ssr";
-import { TableForm } from "./table-form";
 
 export function DialogForm({
   onCreate,
@@ -67,7 +66,7 @@ export function DialogForm({
               <div className="grid gap-4">
                 <div className="grid gap-y-3">
                   <Label htmlFor="name-1" className="mt-4">
-                    Project Name<span className="text-primary">*</span>
+                    Project Name<span className="text-rose-600">*</span>
                   </Label>
                   <Input
                     id="name-1"
