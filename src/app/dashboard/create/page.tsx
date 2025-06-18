@@ -10,7 +10,6 @@ import { DialogForm } from "@/components/dialog-form";
 
 interface FileData {
   file_name: string;
-  description: string;
   updated_at: string;
   created_at: string;
   status: string;
@@ -28,7 +27,6 @@ export default function CreatePage() {
       ...prev,
       {
         file_name: data.name,
-        description: data.description,
         updated_at: new Date().toLocaleDateString(),
         created_at: new Date().toLocaleDateString(),
         status: "Draft",
